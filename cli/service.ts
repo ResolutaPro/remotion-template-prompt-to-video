@@ -2,6 +2,7 @@ import z from "zod";
 import * as fs from "fs";
 import { ElevenLabsClient } from "@elevenlabs/elevenlabs-js";
 import { CharacterAlignmentResponseModel } from "@elevenlabs/elevenlabs-js/api";
+import { parseFile } from "music-metadata";
 import { IMAGE_HEIGHT, IMAGE_WIDTH } from "../src/lib/constants";
 import { zodToJsonSchema } from "zod-to-json-schema";
 
@@ -147,12 +148,64 @@ export const getGenerateImageDescriptionPrompt = (storyText: string) => {
   return prompt;
 };
 
-const saveBase64ToMp3 = (data: string, path: string) => {
-  const buffer = Buffer.from(data, "base64");
-  fs.writeFileSync(path, buffer as Uint8Array);
+const saveBufferToFile = (buffer: Buffer, filePath: string) => {
+  fs.writeFileSync(filePath, buffer as Uint8Array);
 };
 
-export const generateVoice = async (
+const estimateDurationSeconds = (text: string): number => {
+  const words = text.trim().split(/\s+/).filter(Boolean).length;
+  return Math.max(words * 0.4, 1);
+};
+
+const buildAlignmentFromText = (
+  text: string,
+  durationSeconds: number,
+): CharacterAlignmentResponseModel => {
+  const characters = Array.from(text);
+
+  if (characters.length === 0) {
+    return {
+      characters: [],
+      characterStartTimesSeconds: [],
+      characterEndTimesSeconds: [],
+    };
+  }
+
+  const safeDuration = durationSeconds > 0 ? durationSeconds : estimateDurationSeconds(text);
+  const perCharDuration = safeDuration / characters.length;
+  const characterStartTimesSeconds: number[] = [];
+  const characterEndTimesSeconds: number[] = [];
+
+  for (let i = 0; i < characters.length; i++) {
+    characterStartTimesSeconds.push(i * perCharDuration);
+    characterEndTimesSeconds.push((i + 1) * perCharDuration);
+  }
+
+  return {
+    characters,
+    characterStartTimesSeconds,
+    characterEndTimesSeconds,
+  };
+};
+
+const getAudioDurationSeconds = async (
+  filePath: string,
+): Promise<number | null> => {
+  try {
+    const metadata = await parseFile(filePath);
+    return metadata.format.duration ?? null;
+  } catch (error) {
+    console.warn("Unable to read audio metadata", error);
+    return null;
+  }
+};
+
+const saveBase64ToMp3 = (data: string, path: string) => {
+  const buffer = Buffer.from(data, "base64");
+  saveBufferToFile(buffer, path);
+};
+
+export const generateElevenLabsVoice = async (
   text: string,
   apiKey: string,
   path: string,
@@ -174,4 +227,65 @@ export const generateVoice = async (
 
   saveBase64ToMp3(data.audioBase64, path);
   return data.alignment;
+};
+
+export interface LocalTtsConfig {
+  url: string;
+  model?: string;
+  backend?: string;
+  voice?: string;
+  language?: string;
+  responseFormat?: string;
+}
+
+export const generateLocalVoice = async (
+  text: string,
+  config: LocalTtsConfig,
+  path: string,
+): Promise<CharacterAlignmentResponseModel> => {
+  const body: Record<string, unknown> = {
+    input: text,
+  };
+
+  if (config.model) body.model = config.model;
+  if (config.backend) body.backend = config.backend;
+  if (config.voice) body.voice = config.voice;
+  if (config.language) body.language = config.language;
+  if (config.responseFormat) body.response_format = config.responseFormat;
+
+  const res = await fetch(config.url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(body),
+  });
+
+  if (!res.ok) {
+    throw new Error(`Local TTS error: ${await res.text()}`);
+  }
+
+  const audioBuffer = Buffer.from(await res.arrayBuffer());
+  saveBufferToFile(audioBuffer, path);
+
+  const durationSeconds = (await getAudioDurationSeconds(path)) ?? estimateDurationSeconds(text);
+  return buildAlignmentFromText(text, durationSeconds);
+};
+
+export const getLocalTtsConfigFromEnv = (): LocalTtsConfig | null => {
+  const url = process.env.LOCAL_TTS_URL?.trim();
+  if (!url) {
+    return null;
+  }
+
+  const optional = (value?: string) => (value && value.trim().length ? value.trim() : undefined);
+
+  return {
+    url,
+    model: optional(process.env.LOCAL_TTS_MODEL),
+    backend: optional(process.env.LOCAL_TTS_BACKEND),
+    voice: optional(process.env.LOCAL_TTS_VOICE),
+    language: optional(process.env.LOCAL_TTS_LANGUAGE),
+    responseFormat: optional(process.env.LOCAL_TTS_RESPONSE_FORMAT),
+  };
 };

@@ -8,9 +8,11 @@ import chalk from "chalk";
 import * as dotenv from "dotenv";
 import {
   generateAiImage,
-  generateVoice,
+  generateElevenLabsVoice,
+  generateLocalVoice,
   getGenerateImageDescriptionPrompt,
   getGenerateStoryPrompt,
+  getLocalTtsConfigFromEnv,
   openaiStructuredCompletion,
   setApiKey,
 } from "./service";
@@ -87,6 +89,7 @@ class ContentFS {
 async function generateStory(options: GenerateOptions) {
   try {
     let apiKey = options.apiKey || process.env.OPENAI_API_KEY;
+    const localTtsConfig = getLocalTtsConfigFromEnv();
     let elevenlabsApiKey =
       options.elevenlabsApiKey || process.env.ELEVENLABS_API_KEY;
 
@@ -106,7 +109,7 @@ async function generateStory(options: GenerateOptions) {
       apiKey = response.apiKey;
     }
 
-    if (!elevenlabsApiKey) {
+    if (!localTtsConfig && !elevenlabsApiKey) {
       const response = await prompts({
         type: "password",
         name: "elevenlabsApiKey",
@@ -194,6 +197,7 @@ async function generateStory(options: GenerateOptions) {
     contentFs.saveDescriptor(storyWithDetails);
 
     const imagesSpinner = ora("Generating images and voice...").start();
+    const usingLocalTts = Boolean(localTtsConfig);
     for (let i = 0; i < storyWithDetails.content.length; i++) {
       const storyItem = storyWithDetails.content[i];
       imagesSpinner.text = `[${i * 2 + 1}/${storyWithDetails.content.length * 2}] Generating image for ${storyItem.text}`;
@@ -204,12 +208,15 @@ async function generateStory(options: GenerateOptions) {
           imagesSpinner.text = `[${i * 2 + 1}/${storyWithDetails.content.length * 2}] Generating image for ${storyItem.text} (retry ${attempt + 1})`;
         },
       });
-      imagesSpinner.text = `[${i * 2 + 2}/${storyWithDetails.content.length * 2}] Generating voice for ${storyItem.text}`;
-      const timings = await generateVoice(
-        storyItem.text,
-        elevenlabsApiKey!,
-        contentFs.getAudioPath(storyItem.uid),
-      );
+      imagesSpinner.text = `[${i * 2 + 2}/${storyWithDetails.content.length * 2}] Generating voice for ${storyItem.text} (${usingLocalTts ? "local" : "ElevenLabs"})`;
+      const audioPath = contentFs.getAudioPath(storyItem.uid);
+      const timings = usingLocalTts
+        ? await generateLocalVoice(storyItem.text, localTtsConfig!, audioPath)
+        : await generateElevenLabsVoice(
+            storyItem.text,
+            elevenlabsApiKey!,
+            audioPath,
+          );
       storyItem.audioTimestamps = timings;
     }
     contentFs.saveDescriptor(storyWithDetails);
