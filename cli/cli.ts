@@ -41,6 +41,9 @@ async function generateStory(options: GenerateOptions) {
     const localTtsConfig = getLocalTtsConfigFromEnv();
     let elevenlabsApiKey =
       options.elevenlabsApiKey || process.env.ELEVENLABS_API_KEY;
+    const disableImages =
+      process.env.DISABLE_IMAGE_GENERATION === "1" ||
+      process.env.DISABLE_IMAGE_GENERATION === "true";
 
     if (!apiKey) {
       const response = await prompts({
@@ -145,19 +148,26 @@ async function generateStory(options: GenerateOptions) {
     const contentFs = new ContentFS(title!);
     contentFs.saveDescriptor(storyWithDetails);
 
-    const imagesSpinner = ora("Generating images and voice...").start();
+    const imagesSpinner = ora(
+      disableImages ? "Generating voice..." : "Generating images and voice...",
+    ).start();
     const usingLocalTts = Boolean(localTtsConfig);
     for (let i = 0; i < storyWithDetails.content.length; i++) {
       const storyItem = storyWithDetails.content[i];
-      imagesSpinner.text = `[${i * 2 + 1}/${storyWithDetails.content.length * 2}] Generating image for ${storyItem.text}`;
-      await generateAiImage({
-        prompt: storyItem.imageDescription,
-        path: contentFs.getImagePath(storyItem.uid),
-        onRetry: (attempt) => {
-          imagesSpinner.text = `[${i * 2 + 1}/${storyWithDetails.content.length * 2}] Generating image for ${storyItem.text} (retry ${attempt + 1})`;
-        },
-      });
-      imagesSpinner.text = `[${i * 2 + 2}/${storyWithDetails.content.length * 2}] Generating voice for ${storyItem.text} (${usingLocalTts ? "local" : "ElevenLabs"})`;
+
+      if (!disableImages) {
+        imagesSpinner.text = `[${i * 2 + 1}/${storyWithDetails.content.length * 2}] Generating image for ${storyItem.text}`;
+        await generateAiImage({
+          prompt: storyItem.imageDescription,
+          path: contentFs.getImagePath(storyItem.uid),
+          onRetry: (attempt) => {
+            imagesSpinner.text = `[${i * 2 + 1}/${storyWithDetails.content.length * 2}] Generating image for ${storyItem.text} (retry ${attempt + 1})`;
+          },
+        });
+        imagesSpinner.text = `[${i * 2 + 2}/${storyWithDetails.content.length * 2}] Generating voice for ${storyItem.text} (${usingLocalTts ? "local" : "ElevenLabs"})`;
+      } else {
+        imagesSpinner.text = `[${i + 1}/${storyWithDetails.content.length}] Generating voice for ${storyItem.text} (${usingLocalTts ? "local" : "ElevenLabs"})`;
+      }
       const audioPath = contentFs.getAudioPath(storyItem.uid);
       const timings = usingLocalTts
         ? await generateLocalVoice(storyItem.text, localTtsConfig!, audioPath)
@@ -169,7 +179,9 @@ async function generateStory(options: GenerateOptions) {
       storyItem.audioTimestamps = timings;
     }
     contentFs.saveDescriptor(storyWithDetails);
-    imagesSpinner.succeed(chalk.green("Images generated!"));
+    imagesSpinner.succeed(
+      chalk.green(disableImages ? "Voice generated!" : "Images generated!"),
+    );
 
     const finalSpinner = ora("Generating final result...").start();
     const timeline = createTimeLineFromStoryWithDetails(storyWithDetails);

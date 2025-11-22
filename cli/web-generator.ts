@@ -87,6 +87,9 @@ export const generateStoryFromWeb = async (
   const localTtsConfig = getLocalTtsConfigFromEnv();
   let elevenlabsApiKey =
     request.elevenlabsApiKey || process.env.ELEVENLABS_API_KEY;
+  const disableImages =
+    process.env.DISABLE_IMAGE_GENERATION === "1" ||
+    process.env.DISABLE_IMAGE_GENERATION === "true";
 
   if (!apiKey) {
     throw new Error("OPENAI_API_KEY is required");
@@ -135,11 +138,13 @@ export const generateStoryFromWeb = async (
   for (let i = 0; i < storyWithDetails.content.length; i++) {
     const storyItem = storyWithDetails.content[i];
 
-    await generateAiImage({
-      prompt: storyItem.imageDescription,
-      path: contentFs.getImagePath(storyItem.uid),
-      onRetry: () => {},
-    });
+    if (!disableImages) {
+      await generateAiImage({
+        prompt: storyItem.imageDescription,
+        path: contentFs.getImagePath(storyItem.uid),
+        onRetry: () => {},
+      });
+    }
 
     const audioPath = contentFs.getAudioPath(storyItem.uid);
     const timings = usingLocalTts
