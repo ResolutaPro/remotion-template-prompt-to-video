@@ -1,0 +1,1547 @@
+{
+  "elements": [
+    {
+      "startMs": 0,
+      "endMs": 7601,
+      "imageUrl": "f8666097-9234-4bd5-9e78-ddbf7c108f64",
+      "enterTransition": "blur",
+      "exitTransition": "blur",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1.5,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 7601
+        }
+      ]
+    },
+    {
+      "startMs": 7601,
+      "endMs": 16401,
+      "imageUrl": "dfa1277c-2122-4bd4-9725-a0b7d9d3fdd2",
+      "enterTransition": "blur",
+      "exitTransition": "blur",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1.5,
+          "startMs": 0,
+          "endMs": 8800
+        }
+      ]
+    },
+    {
+      "startMs": 16401,
+      "endMs": 24801,
+      "imageUrl": "f1da477d-acfb-4581-ba34-3cd5881efa8c",
+      "enterTransition": "blur",
+      "exitTransition": "blur",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1.5,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 8400
+        }
+      ]
+    },
+    {
+      "startMs": 24801,
+      "endMs": 34002,
+      "imageUrl": "afe3b711-4931-42f5-bea1-fbff6f550f3f",
+      "enterTransition": "blur",
+      "exitTransition": "blur",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1.5,
+          "startMs": 0,
+          "endMs": 9201
+        }
+      ]
+    },
+    {
+      "startMs": 34002,
+      "endMs": 39202,
+      "imageUrl": "fe30257a-07ec-4dd6-b7a2-8fa55e297f2e",
+      "enterTransition": "blur",
+      "exitTransition": "blur",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1.5,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 5200
+        }
+      ]
+    },
+    {
+      "startMs": 39202,
+      "endMs": 48403,
+      "imageUrl": "1a55084b-03af-4204-81cf-4f89778339a3",
+      "enterTransition": "blur",
+      "exitTransition": "blur",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1.5,
+          "startMs": 0,
+          "endMs": 9201
+        }
+      ]
+    },
+    {
+      "startMs": 48403,
+      "endMs": 56004,
+      "imageUrl": "e4143ff7-bc61-4dd1-bbd0-58d19bab7215",
+      "enterTransition": "blur",
+      "exitTransition": "blur",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1.5,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 7601
+        }
+      ]
+    },
+    {
+      "startMs": 56004,
+      "endMs": 63605,
+      "imageUrl": "90daa576-7c6a-402d-acd8-7b9f54548c99",
+      "enterTransition": "blur",
+      "exitTransition": "blur",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1.5,
+          "startMs": 0,
+          "endMs": 7601
+        }
+      ]
+    }
+  ],
+  "text": [
+    {
+      "startMs": 0,
+      "endMs": 1106.7961165048546,
+      "text": "Em uma pequena",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.5796214028741966,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 1106.7961165048546,
+      "endMs": 1697.087378640777,
+      "text": "vila no",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.6093206847383847,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 1697.087378640777,
+      "endMs": 2582.5242718446607,
+      "text": "interior do",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.678428711633382,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 2582.5242718446607,
+      "endMs": 3394.174757281554,
+      "text": "Brasil, um",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.6542458571681603,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 3394.174757281554,
+      "endMs": 4500.970873786408,
+      "text": "garoto chamado",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 4500.970873786408,
+      "endMs": 5460.194174757282,
+      "text": "Lucas estava",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.6105076557178742,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 5460.194174757282,
+      "endMs": 6566.990291262136,
+      "text": "ansioso para a",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.6581877893823693,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 6566.990291262136,
+      "endMs": 7600.000000000002,
+      "text": "Copa do Mundo.",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 7601,
+      "endMs": 8310.677419354839,
+      "text": "Ele tinha",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.5113967318711927,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 8310.677419354839,
+      "endMs": 8807.451612903225,
+      "text": "ouvido",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.6244280988038815,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 8807.451612903225,
+      "endMs": 9517.129032258064,
+      "text": "histórias",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 9517.129032258064,
+      "endMs": 10368.741935483871,
+      "text": "fascinantes",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.6031159787813342,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 10368.741935483871,
+      "endMs": 10936.483870967742,
+      "text": "sobre a",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.5713855673956861,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 10936.483870967742,
+      "endMs": 11788.09677419355,
+      "text": "competição,",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.5679056843611994,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 11788.09677419355,
+      "endMs": 12781.645161290322,
+      "text": "como a vez em",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.6264454094601384,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 12781.645161290322,
+      "endMs": 13846.16129032258,
+      "text": "que a Alemanha",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 13846.16129032258,
+      "endMs": 14484.870967741936,
+      "text": "venceu a",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 14484.870967741936,
+      "endMs": 15407.451612903227,
+      "text": "Argentina na",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.6509881716629765,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 15407.451612903227,
+      "endMs": 16401,
+      "text": "final de 1990.",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 16401,
+      "endMs": 17349.387096774193,
+      "text": "Lucas decidiu",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.5315981898358092,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 17349.387096774193,
+      "endMs": 18094.548387096773,
+      "text": "que queria",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.5634169132395378,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 18094.548387096773,
+      "endMs": 19042.93548387097,
+      "text": "saber mais e,",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 19042.93548387097,
+      "endMs": 19991.322580645163,
+      "text": "durante dias,",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.5834561626686755,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 19991.322580645163,
+      "endMs": 20871.967741935485,
+      "text": "pesquisou na",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 20871.967741935485,
+      "endMs": 21617.129032258064,
+      "text": "internet e",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 21617.129032258064,
+      "endMs": 22565.516129032258,
+      "text": "conversou com",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.6861852229206742,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 22565.516129032258,
+      "endMs": 23581.645161290326,
+      "text": "os mais velhos",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.6239216255679081,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 23581.645161290326,
+      "endMs": 24055.83870967742,
+      "text": "da sua",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.6558797892190074,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 24055.83870967742,
+      "endMs": 24801,
+      "text": "comunidade.",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.5848391452670618,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 24801,
+      "endMs": 25734.333333333332,
+      "text": "Foi então que",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.5997412041623361,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 25734.333333333332,
+      "endMs": 26601,
+      "text": "descobriu um",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.55639681380489,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 26601,
+      "endMs": 27534.333333333336,
+      "text": "fato curioso:",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 27534.333333333336,
+      "endMs": 28267.666666666668,
+      "text": "a primeira",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 28267.666666666668,
+      "endMs": 29201,
+      "text": "Copa do Mundo",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.5196002700064187,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 29201,
+      "endMs": 30134.333333333336,
+      "text": "foi realizada",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 30134.333333333336,
+      "endMs": 30934.333333333336,
+      "text": "em 1930, no",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 30934.333333333336,
+      "endMs": 31667.666666666668,
+      "text": "Uruguai, e",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.5928037560055288,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 31667.666666666668,
+      "endMs": 32534.333333333336,
+      "text": "apenas treze",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.6348792105538964,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 32534.333333333336,
+      "endMs": 33134.333333333336,
+      "text": "seleções",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 33134.333333333336,
+      "endMs": 34001,
+      "text": "participaram.",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 34002,
+      "endMs": 34674.94117647059,
+      "text": "Intrigado,",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 34674.94117647059,
+      "endMs": 35531.41176470588,
+      "text": "Lucas decidiu",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.6847991753868181,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 35531.41176470588,
+      "endMs": 36449.05882352941,
+      "text": "criar um mural",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 36449.05882352941,
+      "endMs": 36693.76470588235,
+      "text": "com",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.599525352858864,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 36693.76470588235,
+      "endMs": 37427.882352941175,
+      "text": "informações",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 37427.882352941175,
+      "endMs": 38100.82352941176,
+      "text": "sobre cada",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.5387542441814889,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 38100.82352941176,
+      "endMs": 38712.58823529412,
+      "text": "edição do",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.584312904150762,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 38712.58823529412,
+      "endMs": 39202,
+      "text": "torneio.",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 39202,
+      "endMs": 40323.95121951219,
+      "text": "Com a ajuda de",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 40323.95121951219,
+      "endMs": 41445.902439024394,
+      "text": "seus amigos, o",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 41445.902439024394,
+      "endMs": 42418.260162601626,
+      "text": "mural ganhou",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 42418.260162601626,
+      "endMs": 43390.617886178865,
+      "text": "vida e todos",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.5671526367561884,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 43390.617886178865,
+      "endMs": 43988.9918699187,
+      "text": "na vila",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 43988.9918699187,
+      "endMs": 44811.756097560974,
+      "text": "passaram a",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 44811.756097560974,
+      "endMs": 45709.317073170736,
+      "text": "comentar as",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.6728403089212237,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 45709.317073170736,
+      "endMs": 46681.67479674797,
+      "text": "curiosidades",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.6028867468481528,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 46681.67479674797,
+      "endMs": 47728.829268292684,
+      "text": "que ele havia",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.5881561615004065,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 47728.829268292684,
+      "endMs": 48402,
+      "text": "coletado.",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.6049340758614618,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 48403,
+      "endMs": 49293.09009009009,
+      "text": "Assim, Lucas",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.6181183023692753,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 49293.09009009009,
+      "endMs": 50046.24324324324,
+      "text": "não apenas",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.6964754594327375,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 50046.24324324324,
+      "endMs": 51073.27027027027,
+      "text": "aprendeu sobre",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 51073.27027027027,
+      "endMs": 52100.2972972973,
+      "text": "o futebol, mas",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.5443246411865551,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 52100.2972972973,
+      "endMs": 53058.85585585586,
+      "text": "também uniu a",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.6704009167617425,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 53058.85585585586,
+      "endMs": 54017.414414414416,
+      "text": "comunidade em",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.5067265339905546,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 54017.414414414416,
+      "endMs": 54633.63063063063,
+      "text": "torno da",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.6942534354308719,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 54633.63063063063,
+      "endMs": 55455.252252252256,
+      "text": "paixão pelo",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 55455.252252252256,
+      "endMs": 56003,
+      "text": "esporte.",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.5515670243664108,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 56004,
+      "endMs": 56821.20430107527,
+      "text": "No dia do",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.5167607845112007,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 56821.20430107527,
+      "endMs": 57883.56989247312,
+      "text": "jogo, a vila",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.5866459895496727,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 57883.56989247312,
+      "endMs": 58700.77419354839,
+      "text": "estava em",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.6886009105043495,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 58700.77419354839,
+      "endMs": 59844.86021505376,
+      "text": "festa, e tudo",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 59844.86021505376,
+      "endMs": 60825.50537634409,
+      "text": "começou por",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 60825.50537634409,
+      "endMs": 61560.98924731183,
+      "text": "causa da",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.6125179010667127,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 61560.98924731183,
+      "endMs": 62786.79569892473,
+      "text": "curiosidade de",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.5920307704115024,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 62786.79569892473,
+      "endMs": 63604,
+      "text": "um menino.",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.6258411733043505,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    }
+  ],
+  "audio": [
+    {
+      "startMs": 0,
+      "endMs": 7601,
+      "audioUrl": "f8666097-9234-4bd5-9e78-ddbf7c108f64"
+    },
+    {
+      "startMs": 7601,
+      "endMs": 16401,
+      "audioUrl": "dfa1277c-2122-4bd4-9725-a0b7d9d3fdd2"
+    },
+    {
+      "startMs": 16401,
+      "endMs": 24801,
+      "audioUrl": "f1da477d-acfb-4581-ba34-3cd5881efa8c"
+    },
+    {
+      "startMs": 24801,
+      "endMs": 34002,
+      "audioUrl": "afe3b711-4931-42f5-bea1-fbff6f550f3f"
+    },
+    {
+      "startMs": 34002,
+      "endMs": 39202,
+      "audioUrl": "fe30257a-07ec-4dd6-b7a2-8fa55e297f2e"
+    },
+    {
+      "startMs": 39202,
+      "endMs": 48403,
+      "audioUrl": "1a55084b-03af-4204-81cf-4f89778339a3"
+    },
+    {
+      "startMs": 48403,
+      "endMs": 56004,
+      "audioUrl": "e4143ff7-bc61-4dd1-bbd0-58d19bab7215"
+    },
+    {
+      "startMs": 56004,
+      "endMs": 63605,
+      "audioUrl": "90daa576-7c6a-402d-acd8-7b9f54548c99"
+    }
+  ],
+  "shortTitle": "Curiosidade copa do mundo"
+}
