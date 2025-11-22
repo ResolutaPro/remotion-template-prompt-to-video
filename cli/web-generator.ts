@@ -11,6 +11,7 @@ import {
   getLocalTtsConfigFromEnv,
   openaiStructuredCompletion,
   setApiKey,
+  buildAlignmentFromText,
 } from "./service";
 import {
   ContentItemWithDetails,
@@ -103,12 +104,15 @@ export const generateStoryFromWeb = async (
   const disableImages =
     process.env.DISABLE_IMAGE_GENERATION === "1" ||
     process.env.DISABLE_IMAGE_GENERATION === "true";
+  const syntheticTimestampsOnly =
+    process.env.SYNTHETIC_TIMESTAMPS_ONLY === "1" ||
+    process.env.SYNTHETIC_TIMESTAMPS_ONLY === "true";
 
   if (!apiKey) {
     throw new Error("OPENAI_API_KEY is required");
   }
 
-  if (!localTtsConfig && !elevenlabsApiKey) {
+  if (!syntheticTimestampsOnly && !localTtsConfig && !elevenlabsApiKey) {
     throw new Error("Either LOCAL_TTS_URL or ELEVENLABS_API_KEY is required");
   }
 
@@ -146,7 +150,7 @@ export const generateStoryFromWeb = async (
   const contentFs = new ContentFS(title);
   contentFs.saveDescriptor(storyWithDetails);
 
-  const usingLocalTts = Boolean(localTtsConfig);
+  const usingLocalTts = Boolean(localTtsConfig) && !syntheticTimestampsOnly;
 
   for (let i = 0; i < storyWithDetails.content.length; i++) {
     const storyItem = storyWithDetails.content[i];
@@ -160,13 +164,19 @@ export const generateStoryFromWeb = async (
     }
 
     const audioPath = contentFs.getAudioPath(storyItem.uid);
-    const timings = usingLocalTts
-      ? await generateLocalVoice(storyItem.text, localTtsConfig!, audioPath)
-      : await generateElevenLabsVoice(
-          storyItem.text,
-          elevenlabsApiKey!,
-          audioPath,
-        );
+    const timings = syntheticTimestampsOnly
+      ? buildAlignmentFromText(storyItem.text, 0)
+      : usingLocalTts
+        ? await generateLocalVoice(
+            storyItem.text,
+            localTtsConfig!,
+            audioPath,
+          )
+        : await generateElevenLabsVoice(
+            storyItem.text,
+            elevenlabsApiKey!,
+            audioPath,
+          );
     storyItem.audioTimestamps = timings;
   }
 
@@ -194,8 +204,11 @@ export const regenerateAudioFromExistingDescriptor = async (
   const localTtsConfig = getLocalTtsConfigFromEnv();
   let elevenlabsApiKey =
     request.elevenlabsApiKey || process.env.ELEVENLABS_API_KEY;
+  const syntheticTimestampsOnly =
+    process.env.SYNTHETIC_TIMESTAMPS_ONLY === "1" ||
+    process.env.SYNTHETIC_TIMESTAMPS_ONLY === "true";
 
-  if (!localTtsConfig && !elevenlabsApiKey) {
+  if (!syntheticTimestampsOnly && !localTtsConfig && !elevenlabsApiKey) {
     throw new Error("Either LOCAL_TTS_URL or ELEVENLABS_API_KEY is required");
   }
 
@@ -222,13 +235,19 @@ export const regenerateAudioFromExistingDescriptor = async (
 
   for (const storyItem of storyWithDetails.content) {
     const audioPath = contentFs.getAudioPath(storyItem.uid);
-    const timings = usingLocalTts
-      ? await generateLocalVoice(storyItem.text, localTtsConfig!, audioPath)
-      : await generateElevenLabsVoice(
-          storyItem.text,
-          elevenlabsApiKey!,
-          audioPath,
-        );
+    const timings = syntheticTimestampsOnly
+      ? buildAlignmentFromText(storyItem.text, 0)
+      : usingLocalTts
+        ? await generateLocalVoice(
+            storyItem.text,
+            localTtsConfig!,
+            audioPath,
+          )
+        : await generateElevenLabsVoice(
+            storyItem.text,
+            elevenlabsApiKey!,
+            audioPath,
+          );
 
     storyItem.audioTimestamps = timings;
     updatedCount++;

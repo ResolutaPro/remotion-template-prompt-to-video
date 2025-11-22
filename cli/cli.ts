@@ -15,6 +15,7 @@ import {
   getLocalTtsConfigFromEnv,
   openaiStructuredCompletion,
   setApiKey,
+  buildAlignmentFromText,
 } from "./service";
 import {
   ContentItemWithDetails,
@@ -44,6 +45,9 @@ async function generateStory(options: GenerateOptions) {
     const disableImages =
       process.env.DISABLE_IMAGE_GENERATION === "1" ||
       process.env.DISABLE_IMAGE_GENERATION === "true";
+    const syntheticTimestampsOnly =
+      process.env.SYNTHETIC_TIMESTAMPS_ONLY === "1" ||
+      process.env.SYNTHETIC_TIMESTAMPS_ONLY === "true";
 
     if (!apiKey) {
       const response = await prompts({
@@ -61,7 +65,7 @@ async function generateStory(options: GenerateOptions) {
       apiKey = response.apiKey;
     }
 
-    if (!localTtsConfig && !elevenlabsApiKey) {
+    if (!syntheticTimestampsOnly && !localTtsConfig && !elevenlabsApiKey) {
       const response = await prompts({
         type: "password",
         name: "elevenlabsApiKey",
@@ -151,7 +155,7 @@ async function generateStory(options: GenerateOptions) {
     const imagesSpinner = ora(
       disableImages ? "Generating voice..." : "Generating images and voice...",
     ).start();
-    const usingLocalTts = Boolean(localTtsConfig);
+    const usingLocalTts = Boolean(localTtsConfig) && !syntheticTimestampsOnly;
     for (let i = 0; i < storyWithDetails.content.length; i++) {
       const storyItem = storyWithDetails.content[i];
 
@@ -169,13 +173,19 @@ async function generateStory(options: GenerateOptions) {
         imagesSpinner.text = `[${i + 1}/${storyWithDetails.content.length}] Generating voice for ${storyItem.text} (${usingLocalTts ? "local" : "ElevenLabs"})`;
       }
       const audioPath = contentFs.getAudioPath(storyItem.uid);
-      const timings = usingLocalTts
-        ? await generateLocalVoice(storyItem.text, localTtsConfig!, audioPath)
-        : await generateElevenLabsVoice(
-            storyItem.text,
-            elevenlabsApiKey!,
-            audioPath,
-          );
+      const timings = syntheticTimestampsOnly
+        ? buildAlignmentFromText(storyItem.text, 0)
+        : usingLocalTts
+          ? await generateLocalVoice(
+              storyItem.text,
+              localTtsConfig!,
+              audioPath,
+            )
+          : await generateElevenLabsVoice(
+              storyItem.text,
+              elevenlabsApiKey!,
+              audioPath,
+            );
       storyItem.audioTimestamps = timings;
     }
     contentFs.saveDescriptor(storyWithDetails);

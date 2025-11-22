@@ -225,7 +225,7 @@ const estimateDurationSeconds = (text: string): number => {
   return Math.max(words * 0.4, 1);
 };
 
-const buildAlignmentFromText = (
+export const buildAlignmentFromText = (
   text: string,
   durationSeconds: number,
 ): CharacterAlignmentResponseModel => {
