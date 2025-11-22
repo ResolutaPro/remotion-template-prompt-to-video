@@ -5,6 +5,7 @@ import { CharacterAlignmentResponseModel } from "@elevenlabs/elevenlabs-js/api";
 import { parseFile } from "music-metadata";
 import { IMAGE_HEIGHT, IMAGE_WIDTH } from "../src/lib/constants";
 import { zodToJsonSchema } from "zod-to-json-schema";
+import { GoogleGenAI } from "@google/genai";
 
 let apiKey: string | null = null;
 
@@ -64,6 +65,60 @@ function saveUint8ArrayToPng(uint8Array: Uint8Array, filePath: string) {
   fs.writeFileSync(filePath, buffer as Uint8Array);
 }
 
+const generateAiImageWithGemini = async ({
+  prompt,
+  path,
+}: {
+  prompt: string;
+  path: string;
+}) => {
+  const apiKey = process.env.GEMINI_API_KEY || process.env.GEMINI_API;
+
+  if (!apiKey) {
+    throw new Error("Gemini API key is not configured (GEMINI_API or GEMINI_API_KEY)");
+  }
+
+  const client = new GoogleGenAI({ apiKey });
+  const model = process.env.GEMINI_IMAGE_MODEL || "gemini-2.5-flash-image";
+
+  const config = {
+    responseModalities: ["IMAGE"],
+  } as const;
+
+  const contents = [
+    {
+      role: "user",
+      parts: [
+        {
+          text: prompt,
+        },
+      ],
+    },
+  ];
+
+  const stream = await client.models.generateContentStream({
+    model,
+    config,
+    contents,
+  });
+
+  for await (const chunk of stream) {
+    const inlineData =
+      chunk.candidates?.[0]?.content?.parts?.[0]?.inlineData || null;
+
+    if (!inlineData?.data) {
+      continue;
+    }
+
+    const buffer = Buffer.from(inlineData.data, "base64");
+    const uint8Array = new Uint8Array(buffer);
+    saveUint8ArrayToPng(uint8Array, path);
+    return;
+  }
+
+  throw new Error("Gemini did not return an image");
+};
+
 export const generateAiImage = async ({
   prompt,
   path,
@@ -73,6 +128,13 @@ export const generateAiImage = async ({
   path: string;
   onRetry: (attempt: number) => void;
 }) => {
+  const geminiKey = process.env.GEMINI_API_KEY || process.env.GEMINI_API;
+
+  if (geminiKey) {
+    await generateAiImageWithGemini({ prompt, path });
+    return;
+  }
+
   const maxRetries = 3;
   let attempt = 0;
   let lastError: Error | null = null;
