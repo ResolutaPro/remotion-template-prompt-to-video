@@ -19,6 +19,8 @@ export const openaiStructuredCompletion = async <T>(
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const jsonSchema = zodToJsonSchema(schema) as any;
 
+  const model = process.env.OPENAI_MODEL || "gpt-4o-mini";
+
   const res = await fetch("https://api.openai.com/v1/chat/completions", {
     method: "POST",
     headers: {
@@ -26,7 +28,7 @@ export const openaiStructuredCompletion = async <T>(
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      model: "gpt-4.1",
+      model,
       messages: [{ role: "user", content: prompt }],
       response_format: {
         type: "json_schema",
@@ -115,10 +117,12 @@ export const generateAiImage = async ({
 };
 
 export const getGenerateStoryPrompt = (title: string, topic: string) => {
+  const language = getTargetLanguageDescription();
+
   const prompt = `Write a short story with title [${title}] (its topic is [${topic}]).
    You must follow best practices for great storytelling. 
    The script must be 8-10 sentences long. 
-   Story events can be from anywhere in the world, but text must be translated into English language. 
+   Story events can be from anywhere in the world, but the final text must be written in ${language}. 
    Result result without any formatting and title, as one continuous text. 
    Skip new lines.`;
 
@@ -126,8 +130,10 @@ export const getGenerateStoryPrompt = (title: string, topic: string) => {
 };
 
 export const getGenerateImageDescriptionPrompt = (storyText: string) => {
+  const language = getTargetLanguageDescription();
+
   const prompt = `You are given story text.
-  Generate (in English) 5-8 very detailed image descriptions  for this story. 
+  Generate (in ${language}) 5-8 very detailed image descriptions for this story. 
   Return their description as json array with story sentences matched to images. 
   Story sentences must be in the same order as in the story and their content must be preserved.
   Each image must match 1-2 sentence from the story.
@@ -203,6 +209,16 @@ const getAudioDurationSeconds = async (
 const saveBase64ToMp3 = (data: string, path: string) => {
   const buffer = Buffer.from(data, "base64");
   saveBufferToFile(buffer, path);
+};
+
+const getTargetLanguageDescription = () => {
+  const lang = process.env.LANGUAGE?.toLowerCase();
+
+  if (lang && (lang === "pt-br" || lang === "pt_br" || lang === "pt")) {
+    return "Brazilian Portuguese";
+  }
+
+  return "English";
 };
 
 export const generateElevenLabsVoice = async (

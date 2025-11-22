@@ -1,5 +1,5 @@
 import * as http from "http";
-import { generateStoryFromWeb } from "./web-generator";
+import { generateStoryFromWeb, generateStoryTextFromWeb } from "./web-generator";
 
 const PORT = 4000;
 
@@ -25,6 +25,9 @@ const INDEX_HTML = `<!doctype html>
       .status.success { color: #6ee7b7; }
       code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 0.8rem; }
       .hint { font-size: 0.8rem; color: #9ca3af; margin-top: -0.25rem; margin-bottom: 0.5rem; }
+      .preview { margin-top: 0.75rem; padding: 0.75rem 0.9rem; border-radius: 0.75rem; background: #020617; border: 1px solid #1f2937; font-size: 0.85rem; white-space: pre-wrap; max-height: 260px; overflow: auto; }
+      .buttons { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.5rem; }
+      .buttons button.secondary { background: #111827; border: 1px solid #374151; }
     </style>
   </head>
   <body>
@@ -49,14 +52,20 @@ const INDEX_HTML = `<!doctype html>
           <label for="elevenKey">ElevenLabs API Key (opcional)</label>
           <input id="elevenKey" name="elevenKey" placeholder="Usa ELEVENLABS_API_KEY ou LOCAL_TTS_URL do .env" />
         </div>
-        <button type="submit"><span>Gerar história</span></button>
+        <div class="buttons">
+          <button type="submit"><span>Gerar história completa</span></button>
+          <button type="button" id="previewBtn" class="secondary"><span>Pré-visualizar só o texto</span></button>
+        </div>
         <div id="status" class="status"></div>
+        <pre id="storyPreview" class="preview"></pre>
       </form>
     </div>
     <script>
       const form = document.getElementById('form');
       const statusEl = document.getElementById('status');
-      const button = form.querySelector('button');
+      const button = form.querySelector('button[type="submit"]');
+      const previewBtn = document.getElementById('previewBtn');
+      const previewEl = document.getElementById('storyPreview');
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
         statusEl.textContent = 'Gerando... isso pode levar alguns minutos.';
@@ -80,6 +89,7 @@ const INDEX_HTML = `<!doctype html>
           }
           statusEl.textContent = 'OK! História gerada em public/content/' + data.slug + '. Abra o Remotion Studio e selecione a composição "' + data.slug + '".';
           statusEl.className = 'status success';
+          if (previewEl) previewEl.textContent = '';
         } catch (err) {
           statusEl.textContent = 'Erro: ' + (err && err.message ? err.message : String(err));
           statusEl.className = 'status error';
@@ -87,6 +97,37 @@ const INDEX_HTML = `<!doctype html>
           button.disabled = false;
         }
       });
+      if (previewBtn) {
+        previewBtn.addEventListener('click', async () => {
+          statusEl.textContent = 'Gerando somente o texto da história...';
+          statusEl.className = 'status';
+          previewBtn.disabled = true;
+          try {
+            const body = {
+              title: form.title.value.trim(),
+              topic: form.topic.value.trim(),
+            };
+            if (form.apiKey.value.trim()) body.apiKey = form.apiKey.value.trim();
+            const res = await fetch('/api/preview-story', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(body),
+            });
+            const data = await res.json();
+            if (!res.ok || !data.ok) {
+              throw new Error(data.error || 'Erro desconhecido');
+            }
+            statusEl.textContent = 'Texto gerado com sucesso. Revise abaixo.';
+            statusEl.className = 'status success';
+            if (previewEl) previewEl.textContent = data.text;
+          } catch (err) {
+            statusEl.textContent = 'Erro: ' + (err && err.message ? err.message : String(err));
+            statusEl.className = 'status error';
+          } finally {
+            previewBtn.disabled = false;
+          }
+        });
+      }
     </script>
   </body>
 </html>`;
@@ -118,6 +159,32 @@ const handler: http.RequestListener = async (req, res) => {
       try {
         const parsed = body ? JSON.parse(body) : {};
         const result = await generateStoryFromWeb(parsed);
+        res.statusCode = 200;
+        res.setHeader("Content-Type", "application/json");
+        res.end(JSON.stringify({ ok: true, ...result }));
+      } catch (err: any) {
+        res.statusCode = 400;
+        res.setHeader("Content-Type", "application/json");
+        res.end(
+          JSON.stringify({
+            ok: false,
+            error: err && err.message ? err.message : String(err),
+          }),
+        );
+      }
+    });
+    return;
+  }
+
+  if (req.method === "POST" && req.url === "/api/preview-story") {
+    let body = "";
+    req.on("data", (chunk) => {
+      body += chunk;
+    });
+    req.on("end", async () => {
+      try {
+        const parsed = body ? JSON.parse(body) : {};
+        const result = await generateStoryTextFromWeb(parsed);
         res.statusCode = 200;
         res.setHeader("Content-Type", "application/json");
         res.end(JSON.stringify({ ok: true, ...result }));

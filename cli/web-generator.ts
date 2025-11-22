@@ -34,6 +34,46 @@ export interface WebGenerateResponse {
   topic: string;
 }
 
+export interface WebStoryPreviewRequest {
+  apiKey?: string;
+  title: string;
+  topic: string;
+}
+
+export interface WebStoryPreviewResponse {
+  title: string;
+  topic: string;
+  text: string;
+}
+
+export const generateStoryTextFromWeb = async (
+  request: WebStoryPreviewRequest,
+): Promise<WebStoryPreviewResponse> => {
+  const { title, topic } = request;
+
+  if (!title || !topic) {
+    throw new Error("Title and topic are required");
+  }
+
+  let apiKey = request.apiKey || process.env.OPENAI_API_KEY;
+
+  if (!apiKey) {
+    throw new Error("OPENAI_API_KEY is required");
+  }
+
+  setApiKey(apiKey);
+  const storyRes = await openaiStructuredCompletion(
+    getGenerateStoryPrompt(title, topic),
+    StoryScript,
+  );
+
+  return {
+    title,
+    topic,
+    text: storyRes.text,
+  };
+};
+
 export const generateStoryFromWeb = async (
   request: WebGenerateRequest,
 ): Promise<WebGenerateResponse> => {
