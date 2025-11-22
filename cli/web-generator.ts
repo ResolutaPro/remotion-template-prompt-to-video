@@ -1,4 +1,6 @@
 import * as dotenv from "dotenv";
+import * as fs from "fs";
+import * as path from "path";
 import { v4 as uuidv4 } from "uuid";
 import {
   generateAiImage,
@@ -44,6 +46,17 @@ export interface WebStoryPreviewResponse {
   title: string;
   topic: string;
   text: string;
+}
+
+export interface WebRegenerateAudioRequest {
+  title: string;
+  elevenlabsApiKey?: string;
+}
+
+export interface WebRegenerateAudioResponse {
+  slug: string;
+  title: string;
+  updatedCount: number;
 }
 
 export const generateStoryTextFromWeb = async (
@@ -166,5 +179,68 @@ export const generateStoryFromWeb = async (
     slug: contentFs.slug,
     title,
     topic,
+  };
+};
+
+export const regenerateAudioFromExistingDescriptor = async (
+  request: WebRegenerateAudioRequest,
+): Promise<WebRegenerateAudioResponse> => {
+  const { title } = request;
+
+  if (!title) {
+    throw new Error("Title is required");
+  }
+
+  const localTtsConfig = getLocalTtsConfigFromEnv();
+  let elevenlabsApiKey =
+    request.elevenlabsApiKey || process.env.ELEVENLABS_API_KEY;
+
+  if (!localTtsConfig && !elevenlabsApiKey) {
+    throw new Error("Either LOCAL_TTS_URL or ELEVENLABS_API_KEY is required");
+  }
+
+  const contentFs = new ContentFS(title);
+  const slug = contentFs.slug;
+
+  const descriptorPath = path.join(
+    process.cwd(),
+    "public",
+    "content",
+    slug,
+    "descriptor.json",
+  );
+
+  if (!fs.existsSync(descriptorPath)) {
+    throw new Error(`descriptor.json not found for slug ${slug}`);
+  }
+
+  const raw = fs.readFileSync(descriptorPath, "utf-8");
+  const storyWithDetails: StoryMetadataWithDetails = JSON.parse(raw);
+
+  const usingLocalTts = Boolean(localTtsConfig);
+  let updatedCount = 0;
+
+  for (const storyItem of storyWithDetails.content) {
+    const audioPath = contentFs.getAudioPath(storyItem.uid);
+    const timings = usingLocalTts
+      ? await generateLocalVoice(storyItem.text, localTtsConfig!, audioPath)
+      : await generateElevenLabsVoice(
+          storyItem.text,
+          elevenlabsApiKey!,
+          audioPath,
+        );
+
+    storyItem.audioTimestamps = timings;
+    updatedCount++;
+  }
+
+  contentFs.saveDescriptor(storyWithDetails);
+  const timeline = createTimeLineFromStoryWithDetails(storyWithDetails);
+  contentFs.saveTimeline(timeline);
+
+  return {
+    slug,
+    title: storyWithDetails.shortTitle,
+    updatedCount,
   };
 };

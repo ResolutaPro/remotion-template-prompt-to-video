@@ -1,5 +1,9 @@
 import * as http from "http";
-import { generateStoryFromWeb, generateStoryTextFromWeb } from "./web-generator";
+import {
+  generateStoryFromWeb,
+  generateStoryTextFromWeb,
+  regenerateAudioFromExistingDescriptor,
+} from "./web-generator";
 
 const PORT = 4000;
 
@@ -55,6 +59,7 @@ const INDEX_HTML = `<!doctype html>
         <div class="buttons">
           <button type="submit"><span>Gerar história completa</span></button>
           <button type="button" id="previewBtn" class="secondary"><span>Pré-visualizar só o texto</span></button>
+          <button type="button" id="regenAudioBtn" class="secondary"><span>Gerar só áudio/timestamps (usando descriptor existente)</span></button>
         </div>
         <div id="status" class="status"></div>
         <pre id="storyPreview" class="preview"></pre>
@@ -65,6 +70,7 @@ const INDEX_HTML = `<!doctype html>
       const statusEl = document.getElementById('status');
       const button = form.querySelector('button[type="submit"]');
       const previewBtn = document.getElementById('previewBtn');
+      const regenAudioBtn = document.getElementById('regenAudioBtn');
       const previewEl = document.getElementById('storyPreview');
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -97,6 +103,36 @@ const INDEX_HTML = `<!doctype html>
           button.disabled = false;
         }
       });
+      if (regenAudioBtn) {
+        regenAudioBtn.addEventListener('click', async () => {
+          statusEl.textContent = 'Gerando apenas áudio e timestamps a partir do descriptor existente...';
+          statusEl.className = 'status';
+          regenAudioBtn.disabled = true;
+          try {
+            const body = {
+              title: form.title.value.trim(),
+            };
+            if (form.elevenKey.value.trim()) body.elevenlabsApiKey = form.elevenKey.value.trim();
+            const res = await fetch('/api/regenerate-audio', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(body),
+            });
+            const data = await res.json();
+            if (!res.ok || !data.ok) {
+              throw new Error(data.error || 'Erro desconhecido');
+            }
+            statusEl.textContent = 'Áudio e timestamps atualizados para ' + data.updatedCount + ' trechos. Arquivos atualizados em public/content/' + data.slug + '.';
+            statusEl.className = 'status success';
+            if (previewEl) previewEl.textContent = '';
+          } catch (err) {
+            statusEl.textContent = 'Erro: ' + (err && err.message ? err.message : String(err));
+            statusEl.className = 'status error';
+          } finally {
+            regenAudioBtn.disabled = false;
+          }
+        });
+      }
       if (previewBtn) {
         previewBtn.addEventListener('click', async () => {
           statusEl.textContent = 'Gerando somente o texto da história...';
@@ -159,6 +195,32 @@ const handler: http.RequestListener = async (req, res) => {
       try {
         const parsed = body ? JSON.parse(body) : {};
         const result = await generateStoryFromWeb(parsed);
+        res.statusCode = 200;
+        res.setHeader("Content-Type", "application/json");
+        res.end(JSON.stringify({ ok: true, ...result }));
+      } catch (err: any) {
+        res.statusCode = 400;
+        res.setHeader("Content-Type", "application/json");
+        res.end(
+          JSON.stringify({
+            ok: false,
+            error: err && err.message ? err.message : String(err),
+          }),
+        );
+      }
+    });
+    return;
+  }
+
+  if (req.method === "POST" && req.url === "/api/regenerate-audio") {
+    let body = "";
+    req.on("data", (chunk) => {
+      body += chunk;
+    });
+    req.on("end", async () => {
+      try {
+        const parsed = body ? JSON.parse(body) : {};
+        const result = await regenerateAudioFromExistingDescriptor(parsed);
         res.statusCode = 200;
         res.setHeader("Content-Type", "application/json");
         res.end(JSON.stringify({ ok: true, ...result }));
