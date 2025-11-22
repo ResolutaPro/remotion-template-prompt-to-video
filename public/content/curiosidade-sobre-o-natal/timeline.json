@@ -1,0 +1,1747 @@
+{
+  "elements": [
+    {
+      "startMs": 0,
+      "endMs": 8800,
+      "imageUrl": "5a34bb3f-ca0f-405e-a780-a3379000be55",
+      "enterTransition": "blur",
+      "exitTransition": "blur",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1.5,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 8800
+        }
+      ]
+    },
+    {
+      "startMs": 8800,
+      "endMs": 20401,
+      "imageUrl": "617b0cd9-31de-4e2d-b7f7-b8276917c0d9",
+      "enterTransition": "blur",
+      "exitTransition": "blur",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1.5,
+          "startMs": 0,
+          "endMs": 11601
+        }
+      ]
+    },
+    {
+      "startMs": 20401,
+      "endMs": 27202,
+      "imageUrl": "149331a0-500c-4da1-b6be-9a8b046ceb3d",
+      "enterTransition": "blur",
+      "exitTransition": "blur",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1.5,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 6801
+        }
+      ]
+    },
+    {
+      "startMs": 27202,
+      "endMs": 42002,
+      "imageUrl": "05386575-873a-4b9c-9c76-37c6fdecffff",
+      "enterTransition": "blur",
+      "exitTransition": "blur",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1.5,
+          "startMs": 0,
+          "endMs": 14800
+        }
+      ]
+    },
+    {
+      "startMs": 42002,
+      "endMs": 47202,
+      "imageUrl": "7f0737bd-1464-4dc8-8063-59955f615c25",
+      "enterTransition": "blur",
+      "exitTransition": "blur",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1.5,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 5200
+        }
+      ]
+    },
+    {
+      "startMs": 47202,
+      "endMs": 51202,
+      "imageUrl": "7ce37bec-ae97-4482-b3ea-672ec5478a77",
+      "enterTransition": "blur",
+      "exitTransition": "blur",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1.5,
+          "startMs": 0,
+          "endMs": 4000
+        }
+      ]
+    },
+    {
+      "startMs": 51202,
+      "endMs": 58003,
+      "imageUrl": "3fa9cebc-1b86-443b-84bb-da9eb0f07b1c",
+      "enterTransition": "blur",
+      "exitTransition": "blur",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1.5,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 6801
+        }
+      ]
+    },
+    {
+      "startMs": 58003,
+      "endMs": 68403,
+      "imageUrl": "1622af2b-7466-4e87-96af-248682696aaf",
+      "enterTransition": "blur",
+      "exitTransition": "blur",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1.5,
+          "startMs": 0,
+          "endMs": 10400
+        }
+      ]
+    }
+  ],
+  "text": [
+    {
+      "startMs": 0,
+      "endMs": 994.7826086956522,
+      "text": "Era uma vez,",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 994.7826086956522,
+      "endMs": 2142.608695652174,
+      "text": "em uma pequena",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.69676542819557,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 2142.608695652174,
+      "endMs": 3213.9130434782614,
+      "text": "aldeia no sul",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.5888322165000148,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 3213.9130434782614,
+      "endMs": 4361.739130434783,
+      "text": "do Brasil, uma",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.6148486774981354,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 4361.739130434783,
+      "endMs": 5280.000000000001,
+      "text": "tradição de",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.5819895062323925,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 5280.000000000001,
+      "endMs": 6045.217391304349,
+      "text": "Natal que",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.6204265352788407,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 6045.217391304349,
+      "endMs": 7116.521739130436,
+      "text": "ninguém sabia",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.5092687361375597,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 7116.521739130436,
+      "endMs": 8187.826086956523,
+      "text": "de onde tinha",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.6612039366040209,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 8187.826086956523,
+      "endMs": 8800,
+      "text": "surgido.",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 8800,
+      "endMs": 9975.675675675675,
+      "text": "Todos os anos,",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.5775033133059311,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 9975.675675675675,
+      "endMs": 10837.837837837838,
+      "text": "ao cair da",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.5447810332056169,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 10837.837837837838,
+      "endMs": 11856.756756756757,
+      "text": "noite do dia",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 11856.756756756757,
+      "endMs": 12327.027027027027,
+      "text": "24 de",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.65678861064861,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 12327.027027027027,
+      "endMs": 13345.945945945947,
+      "text": "dezembro, os",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.5055020703649603,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 13345.945945945947,
+      "endMs": 14129.72972972973,
+      "text": "moradores",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 14129.72972972973,
+      "endMs": 15227.027027027027,
+      "text": "saíam de suas",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 15227.027027027027,
+      "endMs": 16089.18918918919,
+      "text": "casas para",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.6919699065221088,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 16089.18918918919,
+      "endMs": 16794.594594594593,
+      "text": "oferecer",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 16794.594594594593,
+      "endMs": 17735.135135135133,
+      "text": "flores a um",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 17735.135135135133,
+      "endMs": 18910.810810810814,
+      "text": "velho carvalho",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 18910.810810810814,
+      "endMs": 19929.72972972973,
+      "text": "no centro da",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.5548512175426469,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 19929.72972972973,
+      "endMs": 20400,
+      "text": "praça.",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.6204394388932667,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 20401,
+      "endMs": 21251,
+      "text": "Para muitos,",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 21251,
+      "endMs": 21970.23076923077,
+      "text": "aquele ato",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 21970.23076923077,
+      "endMs": 22951,
+      "text": "parecia apenas",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.6520278473375389,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 22951,
+      "endMs": 23539.46153846154,
+      "text": "um gesto",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 23539.46153846154,
+      "endMs": 24520.23076923077,
+      "text": "simpático, mas",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 24520.23076923077,
+      "endMs": 25501,
+      "text": "a história por",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 25501,
+      "endMs": 26481.76923076923,
+      "text": "trás disso era",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.6043340274645057,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 26481.76923076923,
+      "endMs": 27201,
+      "text": "fascinante.",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 27202,
+      "endMs": 27743.463414634145,
+      "text": "Há muito",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.5669736911970757,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 27743.463414634145,
+      "endMs": 28345.08943089431,
+      "text": "tempo, um",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.6773731138438395,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 28345.08943089431,
+      "endMs": 28946.71544715447,
+      "text": "viajante,",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 28946.71544715447,
+      "endMs": 29849.154471544716,
+      "text": "perdido em uma",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 29849.154471544716,
+      "endMs": 30571.10569105691,
+      "text": "tempestade,",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.5820939128074558,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 30571.10569105691,
+      "endMs": 31172.731707317074,
+      "text": "encontrou",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.6935813550387155,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 31172.731707317074,
+      "endMs": 31954.845528455284,
+      "text": "abrigo sob o",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.6086709099407545,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 31954.845528455284,
+      "endMs": 32857.28455284553,
+      "text": "carvalho e, em",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.5877850478346163,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 32857.28455284553,
+      "endMs": 33458.91056910569,
+      "text": "gratidão,",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.5293742218469009,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 33458.91056910569,
+      "endMs": 34301.18699186992,
+      "text": "prometeu que,",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 34301.18699186992,
+      "endMs": 34902.813008130084,
+      "text": "quando as",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.5197467238054022,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 34902.813008130084,
+      "endMs": 35444.276422764226,
+      "text": "estrelas",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.627102516284635,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 35444.276422764226,
+      "endMs": 36106.06504065041,
+      "text": "brilhassem",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.6736951870892927,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 36106.06504065041,
+      "endMs": 37008.50406504065,
+      "text": "mais forte, os",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.5556683930594685,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 37008.50406504065,
+      "endMs": 37670.292682926825,
+      "text": "habitantes",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 37670.292682926825,
+      "endMs": 38572.73170731707,
+      "text": "daquela aldeia",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 38572.73170731707,
+      "endMs": 39114.19512195122,
+      "text": "deveriam",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.5637313468498779,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 39114.19512195122,
+      "endMs": 40016.634146341465,
+      "text": "sempre lembrar",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 40016.634146341465,
+      "endMs": 40197.12195121951,
+      "text": "de",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.5646522649704157,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 40197.12195121951,
+      "endMs": 40979.23577235772,
+      "text": "compartilhar",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 40979.23577235772,
+      "endMs": 41400.37398373984,
+      "text": "amor e",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.6553531225532319,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 41400.37398373984,
+      "endMs": 42002,
+      "text": "esperança.",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 42002,
+      "endMs": 42903.333333333336,
+      "text": "Com o passar",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.553169286323591,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 42903.333333333336,
+      "endMs": 43874,
+      "text": "das gerações,",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 43874,
+      "endMs": 44844.666666666664,
+      "text": "a história se",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.6390012703500897,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 44844.666666666664,
+      "endMs": 45815.333333333336,
+      "text": "perdeu, mas a",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 45815.333333333336,
+      "endMs": 46439.333333333336,
+      "text": "tradição",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 46439.333333333336,
+      "endMs": 47202,
+      "text": "permaneceu.",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.6893733883452743,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 47202,
+      "endMs": 47935.333333333336,
+      "text": "Até que um",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 47935.333333333336,
+      "endMs": 48535.333333333336,
+      "text": "dia, uma",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 48535.333333333336,
+      "endMs": 49535.333333333336,
+      "text": "menina chamada",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 49535.333333333336,
+      "endMs": 50468.666666666664,
+      "text": "Sofia decidiu",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 50468.666666666664,
+      "endMs": 51202,
+      "text": "investigar.",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 51202,
+      "endMs": 52066.40677966102,
+      "text": "Ela questionou",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.5042394690815795,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 52066.40677966102,
+      "endMs": 52930.813559322036,
+      "text": "os mais velhos",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 52930.813559322036,
+      "endMs": 53564.71186440678,
+      "text": "e, com uma",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.631735025866314,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 53564.71186440678,
+      "endMs": 54025.728813559326,
+      "text": "pequena",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 54025.728813559326,
+      "endMs": 54602,
+      "text": "pesquisa,",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 54602,
+      "endMs": 55293.52542372882,
+      "text": "descobriu a",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.6246042814004873,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 55293.52542372882,
+      "endMs": 55927.42372881356,
+      "text": "verdadeira",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.5495646244372585,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 55927.42372881356,
+      "endMs": 56791.83050847458,
+      "text": "origem daquela",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.6279565322392248,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 56791.83050847458,
+      "endMs": 57483.35593220339,
+      "text": "curiosidade",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.6894128564890921,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 57483.35593220339,
+      "endMs": 58002,
+      "text": "natalina.",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.5369739763677767,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 58003,
+      "endMs": 58892.47368421053,
+      "text": "Em sua festa",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 58892.47368421053,
+      "endMs": 59576.68421052631,
+      "text": "de Natal,",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.5665786450963849,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 59576.68421052631,
+      "endMs": 60603,
+      "text": "decidiu contar",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.5314473004575612,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 60603,
+      "endMs": 61355.63157894737,
+      "text": "a história",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.5000700487940116,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 61355.63157894737,
+      "endMs": 62176.68421052631,
+      "text": "para todos,",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.5282820537112256,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 62176.68421052631,
+      "endMs": 63134.57894736842,
+      "text": "reacendendo o",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 63134.57894736842,
+      "endMs": 63681.94736842105,
+      "text": "sentido",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.5685185879467665,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 63681.94736842105,
+      "endMs": 64708.26315789474,
+      "text": "daquele ritual",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.5553480595740767,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 64708.26315789474,
+      "endMs": 65460.89473684211,
+      "text": "que unia a",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.6372420183978066,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 65460.89473684211,
+      "endMs": 66350.36842105263,
+      "text": "comunidade e",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.620871924806289,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 66350.36842105263,
+      "endMs": 67239.84210526316,
+      "text": "reforçava os",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.5669169581013533,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 67239.84210526316,
+      "endMs": 68060.8947368421,
+      "text": "laços entre",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 68060.8947368421,
+      "endMs": 68403,
+      "text": "eles.",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    }
+  ],
+  "audio": [
+    {
+      "startMs": 0,
+      "endMs": 8800,
+      "audioUrl": "5a34bb3f-ca0f-405e-a780-a3379000be55"
+    },
+    {
+      "startMs": 8800,
+      "endMs": 20401,
+      "audioUrl": "617b0cd9-31de-4e2d-b7f7-b8276917c0d9"
+    },
+    {
+      "startMs": 20401,
+      "endMs": 27202,
+      "audioUrl": "149331a0-500c-4da1-b6be-9a8b046ceb3d"
+    },
+    {
+      "startMs": 27202,
+      "endMs": 42002,
+      "audioUrl": "05386575-873a-4b9c-9c76-37c6fdecffff"
+    },
+    {
+      "startMs": 42002,
+      "endMs": 47202,
+      "audioUrl": "7f0737bd-1464-4dc8-8063-59955f615c25"
+    },
+    {
+      "startMs": 47202,
+      "endMs": 51202,
+      "audioUrl": "7ce37bec-ae97-4482-b3ea-672ec5478a77"
+    },
+    {
+      "startMs": 51202,
+      "endMs": 58003,
+      "audioUrl": "3fa9cebc-1b86-443b-84bb-da9eb0f07b1c"
+    },
+    {
+      "startMs": 58003,
+      "endMs": 68403,
+      "audioUrl": "1622af2b-7466-4e87-96af-248682696aaf"
+    }
+  ],
+  "shortTitle": "Curiosidade sobre o Natal"
+}
