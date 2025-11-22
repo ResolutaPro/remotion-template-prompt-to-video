@@ -65,6 +65,70 @@ function saveUint8ArrayToPng(uint8Array: Uint8Array, filePath: string) {
   fs.writeFileSync(filePath, buffer as Uint8Array);
 }
 
+const generateAiImageWithPexels = async ({
+  prompt,
+  path,
+}: {
+  prompt: string;
+  path: string;
+}) => {
+  const apiKey = process.env.PEXELS_API_KEY;
+
+  if (!apiKey) {
+    throw new Error("PEXELS_API_KEY is not configured");
+  }
+
+  const searchParams = new URLSearchParams({
+    query: prompt,
+    per_page: "1",
+    orientation: "landscape",
+  });
+
+  const res = await fetch(
+    `https://api.pexels.com/v1/search?${searchParams.toString()}`,
+    {
+      headers: {
+        Authorization: apiKey,
+        Accept: "application/json, text/plain, */*",
+      },
+    },
+  );
+
+  if (!res.ok) {
+    throw new Error(`Pexels error: ${await res.text()}`);
+  }
+
+  const data = (await res.json()) as any;
+  const photos = Array.isArray(data.photos) ? data.photos : [];
+
+  if (!photos.length) {
+    throw new Error("Pexels did not return any photos");
+  }
+
+  const src = photos[0]?.src ?? {};
+  const url =
+    src.landscape ??
+    src.large2x ??
+    src.large ??
+    src.original ??
+    src.medium;
+
+  if (!url || typeof url !== "string") {
+    throw new Error("Pexels photo has no usable URL");
+  }
+
+  const imageRes = await fetch(url);
+
+  if (!imageRes.ok) {
+    throw new Error(`Failed to download Pexels image: ${await imageRes.text()}`);
+  }
+
+  const arrayBuffer = await imageRes.arrayBuffer();
+  const buffer = Buffer.from(arrayBuffer);
+  const uint8Array = new Uint8Array(buffer);
+  saveUint8ArrayToPng(uint8Array, path);
+};
+
 const generateAiImageWithGemini = async ({
   prompt,
   path,
@@ -119,7 +183,7 @@ const generateAiImageWithGemini = async ({
   throw new Error("Gemini did not return an image");
 };
 
-export const generateAiImage = async ({
+const generateAiImageWithDalle = async ({
   prompt,
   path,
   onRetry,
@@ -128,13 +192,6 @@ export const generateAiImage = async ({
   path: string;
   onRetry: (attempt: number) => void;
 }) => {
-  const geminiKey = process.env.GEMINI_API_KEY || process.env.GEMINI_API;
-
-  if (geminiKey) {
-    await generateAiImageWithGemini({ prompt, path });
-    return;
-  }
-
   const maxRetries = 3;
   let attempt = 0;
   let lastError: Error | null = null;
@@ -176,6 +233,47 @@ export const generateAiImage = async ({
 
   // Ran out of retries, throw the last error
   throw lastError!;
+};
+
+export const generateAiImage = async ({
+  prompt,
+  path,
+  onRetry,
+}: {
+  prompt: string;
+  path: string;
+  onRetry: (attempt: number) => void;
+}) => {
+  const provider = process.env.IMAGE_PROVIDER?.toLowerCase();
+  const pexelsKey = process.env.PEXELS_API_KEY;
+  const geminiKey = process.env.GEMINI_API_KEY || process.env.GEMINI_API;
+
+  if (provider === "pexels") {
+    await generateAiImageWithPexels({ prompt, path });
+    return;
+  }
+
+  if (provider === "gemini") {
+    await generateAiImageWithGemini({ prompt, path });
+    return;
+  }
+
+  if (provider === "dalle") {
+    await generateAiImageWithDalle({ prompt, path, onRetry });
+    return;
+  }
+
+  if (pexelsKey) {
+    await generateAiImageWithPexels({ prompt, path });
+    return;
+  }
+
+  if (geminiKey) {
+    await generateAiImageWithGemini({ prompt, path });
+    return;
+  }
+
+  await generateAiImageWithDalle({ prompt, path, onRetry });
 };
 
 export const getGenerateStoryPrompt = (title: string, topic: string) => {
