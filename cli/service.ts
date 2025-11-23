@@ -81,7 +81,7 @@ const generateAiImageWithPexels = async ({
   const searchParams = new URLSearchParams({
     query: prompt,
     per_page: "1",
-    orientation: "landscape",
+    orientation: "portrait",
   });
 
   const res = await fetch(
@@ -107,11 +107,12 @@ const generateAiImageWithPexels = async ({
 
   const src = photos[0]?.src ?? {};
   const url =
-    src.landscape ??
+    src.portrait ??
     src.large2x ??
     src.large ??
     src.original ??
-    src.medium;
+    src.medium ??
+    src.landscape;
 
   if (!url || typeof url !== "string") {
     throw new Error("Pexels photo has no usable URL");
@@ -154,7 +155,7 @@ const generateAiImageWithGemini = async ({
       role: "user",
       parts: [
         {
-          text: prompt,
+          text: `${prompt}\n\nThe image must be in vertical portrait orientation (9:16), framed for a smartphone screen.`,
         },
       ],
     },
@@ -289,27 +290,49 @@ export const getGenerateStoryPrompt = (title: string, topic: string) => {
   return prompt;
 };
 
-export const getGenerateImageDescriptionPrompt = (storyText: string) => {
+export const getGenerateImageDescriptionPrompt = (
+  storyText: string,
+  title?: string,
+  topic?: string,
+) => {
   const language = getTargetLanguageDescription();
 
-  const prompt = `You are given story text.
-  Generate (in ${language}) 5-8 very detailed image descriptions for this story. 
-  Return their description as json array with story sentences matched to images. 
-  Story sentences must be in the same order as in the story and their content must be preserved.
-  Each image must match 1-2 sentence from the story.
-  Images must show story content in a way that is visually appealing and engaging, not just characters.
-  Give output in json format:
+  const safeTitle = title ?? "N/A";
+  const safeTopic = topic ?? "N/A";
 
-  [
-    {
-      "text": "....",
-      "imageDescription": "..."
-    }
-  ]
+  const prompt = `You are given the title, topic and full story text for a short vertical video.
 
-  <story>
-  ${storyText}
-  </story>`;
+Title: [${safeTitle}]
+Topic: [${safeTopic}]
+
+Your task is to generate (in ${language}) 5-8 very detailed image descriptions that will be used as full-screen vertical (9:16) background images for this story.
+
+Rules:
+- Return a JSON array of objects.
+- Each object MUST have exactly these fields:
+  - "text": 1 or 2 consecutive sentences copied EXACTLY from the story text (same language, same punctuation).
+  - "imageDescription": a detailed description of ONE single scene that visually illustrates those sentences.
+- Keep the "text" items in the same order as they appear in the story so the images follow the narrative.
+- The "imageDescription" MUST strongly reflect both:
+  - the meaning of "text"; and
+  - the overall topic: [${safeTopic}].
+- Focus on the main subject / key concept of the "text" (for example: the tree, the character, the village, the Christmas tradition, etc.).
+- Respect all explicit details in the story (place, season, weather). For example, if the story happens in the south of Brazil, DO NOT create snowy winter Christmas scenes; show a Brazilian summer Christmas instead.
+- Avoid generic or unrelated scenes. Do NOT invent locations or objects that contradict the story or the topic.
+- Images must be visually clear and readable on a smartphone screen when used as vertical 9:16 backgrounds.
+
+Return ONLY the JSON array with this shape:
+
+[
+  {
+    "text": "....",
+    "imageDescription": "..."
+  }
+]
+
+<story>
+${storyText}
+</story>`;
 
   return prompt;
 };

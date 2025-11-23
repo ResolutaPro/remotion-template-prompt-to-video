@@ -128,7 +128,7 @@ export const generateStoryFromWeb = async (
   );
 
   const storyWithImagesRes = await openaiStructuredCompletion(
-    getGenerateImageDescriptionPrompt(storyRes.text),
+    getGenerateImageDescriptionPrompt(storyRes.text, title, topic),
     StoryWithImages,
   );
 

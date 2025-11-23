@@ -129,7 +129,7 @@ async function generateStory(options: GenerateOptions) {
 
     const descriptionsSpinner = ora("Generating image descriptions...").start();
     const storyWithImagesRes = await openaiStructuredCompletion(
-      getGenerateImageDescriptionPrompt(storyRes.text),
+      getGenerateImageDescriptionPrompt(storyRes.text, title!, topic!),
       StoryWithImages,
     );
     descriptionsSpinner.succeed(chalk.green("Image descriptions generated!"));
